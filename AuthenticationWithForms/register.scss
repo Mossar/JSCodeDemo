@@ -1,0 +1,50 @@
+.register-container {
+
+  height: 100%;
+  background-image: url('../img/arcms-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  overflow: auto;
+
+  label {
+    white-space: nowrap;
+  }
+
+  .logo-container {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    img {
+      max-width: 80px;
+    }
+  }
+
+  .alert {
+    margin-bottom: 0px;
+  }
+
+  .button-container {
+    margin-top: 50px;
+    margin-bottom: 25px;
+
+    .btn-default {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .btn-primary {
+      float: right;
+    }
+
+    .btn {
+      width: auto;
+    }
+  }
+
+  .form-control {
+    col-* {
+      padding: 0;
+    }
+  }
+}

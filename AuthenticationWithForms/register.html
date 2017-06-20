@@ -1,0 +1,111 @@
+<div id="register-container" class="container-fluid register-container">
+
+    <!-- ARCMS LOGO SECTION -->
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 logo-container">
+            <img ng-src="{{ $root.getImg('arcms-logo.svg') }}" alt="arcms" />
+        </div>
+    </div>
+
+    <!-- ALERTS SECTION -->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 alert-col">
+            <uib-alert type="danger" ng-repeat="error in errors">{{ error.message }}</uib-alert>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <!-- REGISTER FORM -->
+            <form ng-submit="register()">
+
+                <div class="form-group row" ng-class="{'has-error': isError('name')}">
+                    <div class="col-md-3">
+                        <label for="name">{{ 'shared.fields.customerName' | translate }}</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control arcms-input" id="name" ng-model="customerToCreate.name"
+                               placeholder="{{ 'shared.placeholders.customerName' | translate }}"/>
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-class="{'has-error': isError('surname')}">
+                    <div class="col-md-3">
+                        <label for="surname">{{ 'shared.fields.customerSurname' | translate }}</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control arcms-input" id="surname"
+                               ng-model="customerToCreate.surname"
+                               placeholder="{{ 'shared.placeholders.customerSurname' | translate }}"/>
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-class="{'has-error': isError('email')}">
+                    <div class="col-md-3">
+                        <label for="email">{{ 'shared.fields.email' | translate }}</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control arcms-input" id="email" ng-model="customerToCreate.email"
+                               placeholder="{{ 'shared.placeholders.customerEmail' | translate }}"/>
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-class="{'has-error': isError('customerCompany')}">
+                    <div class="col-md-3">
+                        <label for="company">{{ 'shared.fields.companyName' | translate }}</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control arcms-input" id="company"
+                               ng-model="customerToCreate.customerCompany"
+                               placeholder="{{ 'shared.placeholders.customerCompany' | translate }}"/>
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-class="{'has-error': isError('country')}">
+                    <div class="col-md-3">
+                        <label for="country">{{ 'shared.fields.country' | translate }}</label>
+                    </div>
+                    <div class="col-md-9">
+                        <custom-select name="'country'" field="'displayName'" data="countries"
+                                       model="customerToCreate.country"
+                                       placeholder="'shared.placeholders.customerCountry' | translate"></custom-select>
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-class="{'has-error': isError('password')}">
+                    <div class="col-md-3">
+                        <label for="password">{{ 'shared.fields.password' | translate }}</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control arcms-input" id="password"
+                               ng-model="customerToCreate.password"
+                               placeholder="{{ 'shared.placeholders.password' | translate }}"/>
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-class="{'has-error': isError('repeatPassword')}">
+                    <div class="col-md-3">
+                        <label for="repeatPassword">{{ 'shared.fields.repeatPassword' | translate }}</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control arcms-input" id="repeatPassword"
+                               ng-model="customerToCreate.repeatPassword"
+                               placeholder="{{ 'shared.placeholders.repeatPassword' | translate }}"/>
+                    </div>
+                </div>
+
+                <!-- FORM BUTTONS -->
+                <div class="button-container">
+                    <button class="btn arcms-btn big-btn btn-default" ng-click="$root.route('login')">{{ 'register.fields.goBack' | translate }}</button>
+                    <button type="submit" class="btn arcms-btn big-btn btn-primary">{{ 'register.fields.register' | translate }}</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <spinner name="'register'"></spinner>
+
+</div>

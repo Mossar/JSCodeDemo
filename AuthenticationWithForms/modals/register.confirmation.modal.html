@@ -1,0 +1,15 @@
+<div class="confirmation-modal">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">{{ 'register.modal.title' | translate }}</h3>
+    </div>
+    <div class="modal-body">
+        {{ 'register.modal.text' | translate }}
+    </div>
+    <div class="modal-footer">
+        <button class="btn arcms-btn btn-primary" type="button" ng-click="close()">{{ 'shared.buttons.ok' | translate }}</button>
+    </div>
+
+    <spinner name="'confirmRegister'"></spinner>
+
+</div>
